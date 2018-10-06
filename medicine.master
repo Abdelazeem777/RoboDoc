@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="medicine.master.cs" Inherits="medicine" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <title>RoboDoc</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"type="text/css" href="css/font-awesome.min.css">
+    <link  type="text/css" rel="stylesheet" href="css/mycss.css"/>
+
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 115px;
+        }
+        .auto-style2 {
+            width: 476px;
+        }
+        .auto-style3 {
+            width: 454px;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="main" id="main">
+         <header >
+    <div class="menuBar">
+        <div class="containerOfOptions" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div> 
+       
+        <div class="allLogo">
+        <img class="logo" src="images.png" >
+        <p class="logoName">RoboDoc</p>
+        </div>
+         <div class="dropdown">
+            <div class="fa fa-user" style="float:right;padding:7px;font-size: 27px;margin:5px 10px 0px 1292px;"></div>
+            <div class="dropdown-content" >
+                <asp:Label ID="userName" runat="server" Text=""></asp:Label>
+          <a id="logOut" style="float:left;  border-right:1px solid black;border-left:0px;  " href="accountInfo.aspx">My account</a>
+ 
+                <a id="logOut" href="logIn.aspx">Log out</a>
+          </div>
+        </div>
+
+       
+    </div>
+    </header>
+    
+
+    <aside class="sideBar" id="sideBar">
+            <a href="HomePage.aspx">Home</a>
+        <a href="InsertMedicine.aspx">New medicine</a>
+        <a href="accountInfo.aspx">My Account</a>
+        <a href="logIn.aspx">Sign out</a>
+    </aside>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+         <footer>
+        <div class="contact">
+            <p>Contact with us:</p>
+        </div>
+        <div class="socialIcon">
+            
+            <a href="https://www.facebook.com/abdelazeem.kuratem" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/abdelazeem-kuratem-41065a145/" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://twitter.com/abdelazeem263" class="fa fa-twitter" target="_blank"></a>
+        </div>
+        <div class="copyright">
+            All rights for <sup> ©</sup>RoboDoc.Inc
+        </div>
+
+    </footer>
+</div>
+    
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/MyJavaScript.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#p1").fadeIn(3000);
+            $("#p2").fadeIn(3000);
+            $("#p3").fadeIn(3000);
+        });
+
+        var itIsNone = true;
+        function myFunction(x) {
+            x.classList.toggle("change");
+            if (itIsNone === true) {
+
+                itIsNone = false;
+                document.getElementById("sideBar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.1)";
+            }
+            else {
+
+                itIsNone = true;
+                document.getElementById("sideBar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+        }
+
+    </script>
+    
+    </form>
+</body>
+</html>
